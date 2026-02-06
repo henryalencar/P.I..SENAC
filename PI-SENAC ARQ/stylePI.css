@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(102, 197, 204, 0.5);
+    --color-secondary: #6B8E23;
+    --color-background: #F5F5DC;
+    --color-danger: #ef4444;
+    font-family: 'Inter', sans-serif;
+    background-image: url(../P.I/img/Curso\ de\ podologia\ no\ RJ_\ matricule-se\ no\ Instituto\ Valéria\ Vaz.png);
+    background-size: cover;
+}
+
+iframe {
+    border-radius: 15px;
+}
+
+main {
+    padding: 30px;
+    margin: 40px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+/* ---------------- HEADER ----------------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F5F5DC;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    align-items: center;
+    color: #003399;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 15px;
+}
+
+menu ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+menu a {
+    text-decoration: none;
+    color: #003399;
+}
+
+/* Ícones fixos */
+
+.icone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 80vh;
+    right: 0;
+    opacity: 80%;
+    height: 110px;
+}
+
+.iconeimg img {
+    width: 42px;
+}
+
+/* ---------------- SEÇÕES ---------------- */
+
+.vem, .vem1, .vem2 {
+    padding: 30px;
+    margin: 40px;
+    border-radius: 20px;
+    background-color: #F5F5DC;
+    transition: 0.8s;
+}
+
+.vem:hover, .vem1:hover, .vem2:hover {
+    transform: translateY(-25px);
+    opacity: 1;
+}
+
+/* Serviços */
+
+.servicos {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.imagens {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.imagens img {
+    width: 500px;
+    height: 550px;
+    border-radius: 15px;
+    margin: 20px;
+    transition: 0.8s;
+}
+
+.imagens img:hover {
+    transform: translateY(-40px);
+}
+
+/* CTA */
+
+.cta-section {
+    text-align: center;
+    background-color: #003399;
+    color: white;
+    padding: 30px 20px;
+}
+
+.cta-section h3 {
+    color: #000;
+    font-size: 1.6em;
+}
+
+.btn-agendamento {
+    display: inline-block;
+    background-color: #003399;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: 0.4s;
+}
+
+.btn-agendamento:hover {
+    background-color: #FF5000;
+}
+
+/* ----------- TITULOS --------------- */
+
+h2, h3 {
+    text-align: center;
+    color: #003399;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/* -------------- CARROSSEL --------------- */
+
+.carousel-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.slide {
+    display: none;
+    animation: fade 0.6s ease-in-out;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Botões */
+.prev, .next {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Bolinhas */
+.carousel-dots {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.carousel-dots span {
+    width: 12px;
+    height: 12px;
+    background: gray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-dots .active {
+    background: #003399;
+    transform: scale(1.2);
+}
+
+/* Animação */
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsividade */
+
+@media screen and (min-width: 768px) {
+    i#burguer {
+        display: none;
+    }
+}
