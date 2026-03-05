@@ -1,0 +1,435 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIÁVEIS GLOBAIS */
+:root {
+    --color-primary: #003399;
+    --color-secondary: #6B8E23;
+    --color-accent: #FF5000;
+    --color-background: #F5F5DC;
+    --color-white: #ffffff;
+    --color-danger: #ef4444;
+
+    --radius-md: 12px;
+    --radius-lg: 20px;
+
+    --shadow-soft: 0 8px 20px rgba(0,0,0,0.1);
+}
+.text-center {   /*  centralizar texto */
+    text-align: center;
+}
+
+/* ESTILOS GERAIS */
+
+/* TIPOGRAFIA */
+h2 {
+    font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+p {
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    line-height: 1.6;
+}
+
+body {
+    background-color: rgba(102, 197, 204, 0.5);
+    --color-secondary: #6B8E23;
+    --color-background: #F5F5DC;
+    --color-danger: #ef4444;
+    font-family: 'Inter', sans-serif;
+    background-image: url(../P.I/img/Curso\ de\ podologia\ no\ RJ_\ matricule-se\ no\ Instituto\ Valéria\ Vaz.png);
+    background-size: cover;
+}
+
+iframe {
+    border-radius: 15px;
+}
+
+main {
+    padding: 30px;
+    margin: 40px;
+    border-radius: 20px;
+    background-color: white;
+    
+}
+
+/* ---------------- HEADER ----------------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #F5F5DC;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    align-items: center;
+    color: #003399;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 8px 20px;
+    
+    
+}
+header h1 {
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
+    font-weight: 600;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeDown 0.8s ease forwards;
+}
+
+@keyframes fadeDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*--Estilização do menu de navegação*/
+nav ul {  
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #003399;
+    font-weight: 600;
+    padding: 6px 10px;
+    position: relative;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito leve ao passar o mouse */
+nav ul li a:hover {
+    transform: translateY(-2px);
+    color: #FF5000;
+}
+
+/* Ícones fixos */
+
+.logo-senac {
+    width: 120px;
+    transition: 0.4s ease;
+}
+
+.logo-senac:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px rgba(0, 51, 153, 0.6));
+}
+
+
+.social-fixo {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background: white;
+    padding: 12px;
+    border-radius: 20px;
+    
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    z-index: 999;
+}
+
+.social-btn img {
+    width: 40px;
+    transition: 0.3s ease;
+}
+
+.social-btn:hover img {
+    transform: scale(1.15);
+}
+
+/* ---------------- SEÇÕES ---------------- */
+
+.vem, .vem1, .vem2 {
+    padding: 30px;
+    margin: 40px;
+    border-radius: 20px;
+    background-color: #F5F5DC;
+    transition: 0.8s;
+}
+
+.vem:hover, .vem1:hover, .vem2:hover {
+    transform: translateY(-8px);
+}
+
+/* Serviços */
+
+
+.servicos {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.imagens {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+
+.imagens img {
+    width: 100%;
+    height: 350px; /* altura fixa igual para todas */
+    object-fit: cover; /* corta sem deformar */
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-soft);
+}
+
+.imagens img:hover {
+    transform: scale(1.05);
+}
+/* CARDS DE SERVIÇO */
+
+.card-servico {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+}
+
+.card-servico img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.overlay h3 {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.overlay p {
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.card-servico:hover img {
+    transform: scale(1.05);
+}
+
+.card-servico:hover .overlay {
+    opacity: 1;
+}
+
+/* CTA */
+
+.cta-section {
+    text-align: center;
+    background-color: #003399;
+    color: white;
+    padding: 30px 20px;
+}
+
+.cta-section h3 {
+    color: white;
+}
+
+.btn-agendamento {
+    display: inline-block;
+    background-color: #FF5000; /* Laranja Senac */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-soft);
+     text-decoration: none;
+}
+
+.btn-agendamento:hover {
+    background-color: #e04600;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+.btn-agendamento:active {
+    transform: scale(0.98);
+}
+
+/* ----------- TITULOS --------------- */
+
+h2, h3 {
+    text-align: center;
+    color: #003399;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/* -------------- CARROSSEL --------------- */
+
+.carousel-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+.slide img {
+    width: 100%;
+    height: clamp(250px, 40vw, 450px);
+    object-fit: cover;
+}
+
+.slide {
+    display: none;
+    animation: fade 0.6s ease-in-out;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Botões */
+.prev, .next {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Bolinhas */
+.carousel-dots {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.carousel-dots span {
+    width: 12px;
+    height: 12px;
+    background: gray;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.carousel-dots .active {
+    background: #003399;
+    transform: scale(1.2);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Animação */
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsividade */
+
+@media screen and (min-width: 768px) {
+    i#burguer {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media (max-width: 1024px) {
+    .imagens {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .imagens {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+        margin: 20px;
+    }
+}
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 768px) {
+    .social-fixo {
+        display: none;
+    }
+}
